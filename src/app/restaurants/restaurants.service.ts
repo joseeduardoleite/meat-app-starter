@@ -17,4 +17,8 @@ export class RestaurantsService {
     restaurantById(id: string): Observable<Restaurant> {
         return this.http.get<Restaurant>(`${MEAT_API}/restaurants/${id}`).pipe(catchError(ErrorHandler.handleError))
     }
+
+    reviewsOfRestaurant(id: string): Observable<any> {
+        return this.http.get<Restaurant>(`${MEAT_API}/restaurants/${id}/reviews`).pipe(catchError(ErrorHandler.handleError))
+    }
 }
